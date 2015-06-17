@@ -1,0 +1,30 @@
+<h2>Add new customer</h2>
+<div class="list-group-item">
+	<form novalidate name="AddNewForm" id="add-new-form" method="post" action="">
+	  <label for="user">Name:</label>
+	  <input type="text" ng-model="user.name" required />
+	  <br/>
+	  <label for="user">Email:</label>
+	  <input type="text" ng-model="user.email" required />
+	  <br/>
+	  <label for="user">Telephone:</label>
+	  <input type="text" ng-model="user.telephone" required />
+	  <br/>
+	  <label for="user">Address:</label>
+	  <input type="text" ng-model="user.address" required />
+	  <br/>
+	  <label for="user">Street:</label>
+	  <input type="text" ng-model="user.street" required />
+	  <br/>
+	  <label for="user">City:</label>
+	  <input type="text" ng-model="user.city" required />
+	  <br/>
+	  <label for="user">State:</label>
+	  <input type="text" ng-model="user.state" required />
+	  <br/>
+	  <label for="user">Zip:</label>
+	  <input type="text" ng-model="user.zip" required />
+	  <br/>
+	  <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(user)" id="add-new-btn" ng-click="addUser(user)">Add!</button>
+	</form>
+</div>

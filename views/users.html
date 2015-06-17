@@ -1,0 +1,42 @@
+<div class="row row-offcanvas row-offcanvas-right">
+  <div class="col-xs-12 col-sm-8">
+    <p class="pull-right visible-xs">
+      <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+      <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Telephone</th>
+        <th>Delete</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in users | filter:search">
+        <td>{{$index + 1}}</td>
+        <td>
+          <a href="#/user/{{user.id}}">{{user.name}}</a>
+        </td>
+        <td>{{user.email}}</td>
+        <td>{{user.telephone}}</td>
+        <td><a ng-click="deleteUser( user )">delete</a></td>
+        <td><a href="#/edit/{{user.id}}">edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div><!--/.col-xs-12.col-sm-8-->
+  <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+    <h3 class="text-center">Customers filter</h3>
+    <div class="list-group">
+      <div class="list-group-item text-center">
+        <form>
+          <input type="text" class="form-control" placeholder="Search..." ng-model="search">
+        </form>
+      </div>
+    </div>
+  </div><!--/.sidebar-offcanvas-->
+</div><!--/row-->
+<!-- Show existing users. -->
